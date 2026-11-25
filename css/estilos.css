@@ -34,5 +34,46 @@
  */
 
 :root {
-  /* TODO */
+  --marca-primario: #9a3412;
+  --marca-secundario: #2f6b5e;
+  --marca-fondo: #fbf6ee;
+  --marca-texto: #2b1d14;
+
+   --marca-fuente: 'Lato', sans-serif;
+  --marca-fuente-titulos: 'Josefin Sans', sans-serif;
+
+  --bs-body-bg: var(--marca-fondo);
+  --bs-body-color: var(--marca-texto);
+  --bs-body-font-family: var(--marca-fuente);
+
+  .navbar {
+  background-color: var(--marca-primario);
+}
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--marca-primario);
+  --bs-btn-border-color: var(--marca-primario);
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-bg: var(--marca-secundario);
+  --bs-btn-hover-border-color: var(--marca-secundario);
+  --bs-btn-hover-color: #ffffff;
+}
+h1, h2, h3 {
+  font-family: var(--marca-fuente-titulos);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--marca-primario);
+  --bs-btn-border-color: var(--marca-primario);
+  --bs-btn-hover-bg: var(--marca-primario);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-border-color: var(--marca-primario);
+  --bs-btn-active-bg: var(--marca-primario);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-border-color: var(--marca-primario);
+}
+
+:focus-visible {
+  outline: 3px solid var(--marca-secundario);
+  outline-offset: 3px;
 }

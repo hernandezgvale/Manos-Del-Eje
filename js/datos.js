@@ -29,7 +29,7 @@
 const configuracion = {
   titulo: 'Manos del Eje',
   campoOrden: 'precio',
-  etiquetaValor: 'precio'
+  etiquetaValor: 'Precio'
 };
 
 const items = [
@@ -67,6 +67,17 @@ const items = [
   },
 
   {
+    id: 4,
+    nombre: 'Jarrón de barro',
+    categoria: 'ceramica',
+    descripcion: 'Jarrón pintado con motivos cafeteros.',
+    imagen: 'img/placeholder.svg',
+    precio: 55000,
+    artesano: 'Martha Salazar',
+    municipio: 'Pereira'
+  },
+
+  {
     id: 5,
     nombre: 'Pocillos cafeteros',
     categoria: 'ceramica',
@@ -85,6 +96,17 @@ const items = [
     precio: 42000,
     artesano: 'Diego Uribe',
     municipio: 'Santa Rosa de Cabal'
+  },
+
+   {
+    id: 7,
+    nombre: 'Ruana de lana',
+    categoria: 'textiles',
+    descripcion: 'Ruana tejida en telar de lana virgen.',
+    imagen: 'img/placeholder.svg',
+    precio: 180000,
+    artesano: 'Teresa López',
+    municipio: 'Belén de Umbría'
   },
 
    {
@@ -109,6 +131,17 @@ const items = [
   },
 
   {
+    id: 10,
+    nombre: 'Jeep Willys tallado',
+    categoria: 'madera',
+    descripcion: 'Miniatura del Willys cargado de café.',
+    imagen: 'img/placeholder.svg',
+    precio: 85000,
+    artesano: 'Hernán Giraldo',
+    municipio: 'Salento'
+  },
+
+  {
     id: 11,
     nombre: 'Cucharas de cocina',
     categoria: 'madera',
@@ -129,5 +162,5 @@ const items = [
     municipio: 'Calarcá'
   },
 
-  
+
 ];
