@@ -13,8 +13,8 @@ Sitio publicado: https://hernandezgvale.github.io/Manos-Del-Eje/
 Pega aquí las dos últimas líneas de `node verificar-evaluacion.js --sin-api`:
 
 ```
-Puntos automáticos: 49 de 54
-Nota automática:    4.08 de 4.5
+Puntos automáticos: 51 de 54
+Nota automática:    4.25 de 4.5
 ```
 
 ## Qué me faltó o qué haría distinto
