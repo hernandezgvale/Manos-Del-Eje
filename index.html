@@ -97,6 +97,76 @@
 
   </section>
 
+  <section class="container py-4" aria-labelledby="titulo-catalogo">
+
+  <h2 id="titulo-catalogo">Catálogo</h2>
+
+  <div class="btn-group flex-wrap mb-3"
+    role="group"
+    aria-label="Filtrar por categoría">
+
+    <button type="button" class="btn btn-outline-primary active"
+      data-categoria="todas" aria-pressed="true">
+      Todas
+    </button>
+
+    <button type="button" class="btn btn-outline-primary"
+      data-categoria="cesteria" aria-pressed="false">
+      Cestería
+    </button>
+
+    <button type="button" class="btn btn-outline-primary"
+      data-categoria="ceramica" aria-pressed="false">
+      Cerámica
+    </button>
+
+    <button type="button" class="btn btn-outline-primary"
+      data-categoria="textiles" aria-pressed="false">
+      Textiles
+    </button>
+
+    <button type="button" class="btn btn-outline-primary"
+      data-categoria="madera" aria-pressed="false">
+      Madera
+    </button>
+
+  </div>
+
+  <div class="row g-3 mb-3">
+
+  <div class="col-md-6">
+    <label for="buscador" class="form-label">
+      Buscar artesanías
+    </label>
+
+    <input type="search" id="buscador"
+      class="form-control"
+      placeholder="Buscar...">
+  </div>
+
+  <div class="col-md-6">
+    <label for="orden" class="form-label">
+      Ordenar por
+    </label>
+
+    <select id="orden" class="form-select">
+      <option value="nombre-asc">Nombre (A-Z)</option>
+      <option value="valor-asc">Menor precio</option>
+      <option value="valor-desc">Mayor precio</option>
+    </select>
+  </div>
+
+</div>
+
+<p id="contador" aria-live="polite">
+  Mostrando 0 de 12
+</p>
+
+<div id="catalogo"
+  class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+</div>
+</section>
+
 </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- El orden importa: primero los datos, después la lógica -->

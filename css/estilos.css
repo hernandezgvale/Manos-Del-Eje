@@ -39,16 +39,16 @@
   --marca-fondo: #fbf6ee;
   --marca-texto: #2b1d14;
 
-   --marca-fuente: 'Lato', sans-serif;
+  --marca-fuente: 'Lato', sans-serif;
   --marca-fuente-titulos: 'Josefin Sans', sans-serif;
 
   --bs-body-bg: var(--marca-fondo);
   --bs-body-color: var(--marca-texto);
   --bs-body-font-family: var(--marca-fuente);
-
-  .navbar {
-  background-color: var(--marca-primario);
 }
+
+.navbar {
+  background-color: var(--marca-primario);
 }
 
 .btn-primary {
@@ -59,9 +59,11 @@
   --bs-btn-hover-border-color: var(--marca-secundario);
   --bs-btn-hover-color: #ffffff;
 }
+
 h1, h2, h3 {
   font-family: var(--marca-fuente-titulos);
 }
+
 .btn-outline-primary {
   --bs-btn-color: var(--marca-primario);
   --bs-btn-border-color: var(--marca-primario);
