@@ -27,21 +27,107 @@
  */
 
 const configuracion = {
-  titulo: '',
-  campoOrden: '',
-  etiquetaValor: ''
+  titulo: 'Manos del Eje',
+  campoOrden: 'precio',
+  etiquetaValor: 'precio'
 };
 
 const items = [
-  // Ejemplo de la forma (tema Mercado campesino). Bórralo y escribe los tuyos.
-  // {
-  //   id: 1,
-  //   nombre: 'Mora de Castilla',
-  //   categoria: 'frutas',
-  //   descripcion: 'Mora fresca de las veredas de Santa Rosa de Cabal.',
-  //   imagen: 'img/placeholder.svg',
-  //   precio: 6500,
-  //   unidad: 'libra',
-  //   municipio: 'Santa Rosa de Cabal'
-  // },
+ 
+   {
+    id: 1,
+    nombre: 'Canasto de bejuco',
+    categoria: 'cesteria',
+    descripcion: 'Canasto tejido a mano, ideal para frutas.',
+    imagen: 'img/placeholder.svg',
+    precio: 65000,
+    artesano: 'Rosa Cardona',
+    municipio: 'Filandia'
+  },
+
+    {
+    id: 2,
+    nombre: 'Individuales de iraca',
+    categoria: 'cesteria',
+    descripcion: 'Juego de 4 individuales tejidos.',
+    imagen: 'img/placeholder.svg',
+    precio: 48000,
+    artesano: 'Luz Marina Ospina',
+    municipio: 'Filandia'
+  },
+  {
+    id: 3,
+    nombre: 'Lámpara de guadua',
+    categoria: 'cesteria',
+    descripcion: 'Lámpara colgante tejida en guadua.',
+    imagen: 'img/placeholder.svg',
+    precio: 120000,
+    artesano: 'José Ramírez',
+    municipio: 'Córdoba'
+  },
+
+  {
+    id: 5,
+    nombre: 'Pocillos cafeteros',
+    categoria: 'ceramica',
+    descripcion: 'Juego de 2 pocillos esmaltados.',
+    imagen: 'img/placeholder.svg',
+    precio: 38000,
+    artesano: 'Martha Salazar',
+    municipio: 'Pereira'
+  },
+  {
+    id: 6,
+    nombre: 'Plato decorativo',
+    categoria: 'ceramica',
+    descripcion: 'Plato de pared con paisaje del Eje.',
+    imagen: 'img/placeholder.svg',
+    precio: 42000,
+    artesano: 'Diego Uribe',
+    municipio: 'Santa Rosa de Cabal'
+  },
+
+   {
+    id: 8,
+    nombre: 'Mochila tejida',
+    categoria: 'textiles',
+    descripcion: 'Mochila de hilo con diseños geométricos.',
+    imagen: 'img/placeholder.svg',
+    precio: 95000,
+    artesano: 'Claudia Rojas',
+    municipio: 'Quinchía'
+  },
+  {
+    id: 9,
+    nombre: 'Tapiz de pared',
+    categoria: 'textiles',
+    descripcion: 'Tapiz con figuras de la cultura quimbaya.',
+    imagen: 'img/placeholder.svg',
+    precio: 140000,
+    artesano: 'Teresa López',
+    municipio: 'Belén de Umbría'
+  },
+
+  {
+    id: 11,
+    nombre: 'Cucharas de cocina',
+    categoria: 'madera',
+    descripcion: 'Juego de 3 cucharas de madera de naranjo.',
+    imagen: 'img/placeholder.svg',
+    precio: 30000,
+    artesano: 'Hernán Giraldo',
+    municipio: 'Salento'
+  },
+  {
+    id: 12,
+    nombre: 'Bandeja de cedro',
+    categoria: 'madera',
+    descripcion: 'Bandeja para servir con asas talladas.',
+    imagen: 'img/placeholder.svg',
+    precio: 75000,
+    artesano: 'Fabio Montoya',
+    municipio: 'Calarcá'
+  },
+
+  
 ];
