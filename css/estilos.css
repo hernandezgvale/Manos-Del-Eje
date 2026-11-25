@@ -84,3 +84,13 @@ footer {
   background-color: var(--marca-texto);
   color: #ffffff;
 }
+
+.categoria-badge {
+  background-color: var(--marca-secundario);
+  color: #ffffff;
+}
+
+.precio {
+  color: var(--marca-primario);
+  font-weight: bold;
+}

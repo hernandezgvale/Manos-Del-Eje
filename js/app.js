@@ -35,14 +35,48 @@ const estado = {
 // un badge con la categoría, la descripción, el valor de
 // item[configuracion.campoOrden] con su etiqueta, y tus 2 campos propios.
 function crearCard(item) {
+  return `
+    <div class="col">
+      <article class="card rounded-3 border-0 shadow h-100">
 
+        <img src="${item.imagen}" 
+          class="card-img-top" 
+          alt="${item.nombre}">
+
+        <div class="card-body">
+
+          <span class="badge categoria-badge">
+            ${item.categoria}
+          </span>
+
+          <h3 class="card-title">${item.nombre}</h3>
+
+          <p class="card-text">${item.descripcion}</p>
+
+          <p class="precio">
+            ${configuracion.etiquetaValor}:
+            $${item[configuracion.campoOrden].toLocaleString("es-CO")}
+          </p>
+
+          <p>Artesano: ${item.artesano}</p>
+
+          <p>Municipio: ${item.municipio}</p>
+
+        </div>
+
+      </article>
+    </div>
+  `;
 }
-
 // TODO: devuelve el HTML de TODAS las tarjetas de la lista (map + join).
 // Si la lista está vacía, devuelve un mensaje (por ejemplo un <p>) que
 // diga que no hay resultados.
 function generarHTML(lista) {
+  if (lista.length === 0) {
+    return '<p class="text-center">No hay resultados para tu búsqueda.</p>';
+  }
 
+  return lista.map(crearCard).join("");
 }
 
 /* ---------------------------------------------------------------
@@ -85,7 +119,14 @@ function aplicarFiltros(lista, estadoActual) {
 // resultado en #catalogo con innerHTML y actualiza #contador
 // (por ejemplo "Mostrando 5 de 12 resultados").
 function actualizarVista() {
+  const lista = items;
 
+  const catalogo = document.getElementById("catalogo");
+  const contador = document.getElementById("contador");
+
+  catalogo.innerHTML = generarHTML(lista);
+
+  contador.textContent = `Mostrando ${lista.length} de ${items.length} resultados`;
 }
 
 // TODO: conecta los eventos y pinta por primera vez.
@@ -95,7 +136,7 @@ function actualizarVista() {
 //   change en #orden: actualiza estado.orden
 // Después de cada cambio llama a actualizarVista().
 function iniciar() {
-
+  actualizarVista();
 }
 
 // No cambies estas líneas: así el archivo también carga en el verificador,
