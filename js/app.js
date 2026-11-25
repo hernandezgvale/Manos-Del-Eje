@@ -87,14 +87,27 @@ function generarHTML(lista) {
 // TODO: devuelve solo los elementos de esa categoría.
 // Si categoria es 'todas', devuelve todos.
 function filtrarPorCategoria(lista, categoria) {
+  if (categoria === "todas") {
+    return lista;
+  }
 
-}
+  return lista.filter(item => item.categoria === categoria);
+} 
 
 // TODO: devuelve los elementos cuyo nombre o descripcion contienen el
 // texto, sin importar mayúsculas ni espacios al inicio o al final.
 // Si el texto está vacío, devuelve todos.
 function buscarPorTexto(lista, texto) {
+  const busqueda = texto.toLowerCase().trim();
 
+  if (busqueda === "") {
+    return lista;
+  }
+
+  return lista.filter(item =>
+    item.nombre.toLowerCase().includes(busqueda) ||
+    item.descripcion.toLowerCase().includes(busqueda)
+  );
 }
 
 // TODO: devuelve una COPIA ordenada según el criterio:
@@ -102,13 +115,37 @@ function buscarPorTexto(lista, texto) {
 //   'valor-asc'   de menor a mayor según item[configuracion.campoOrden]
 //   'valor-desc'  de mayor a menor
 function ordenarItems(lista, criterio) {
+  const copia = [...lista];
 
+  if (criterio === "nombre-asc") {
+    return copia.sort((a, b) => a.nombre.localeCompare(b.nombre));
+  }
+
+  if (criterio === "valor-asc") {
+    return copia.sort((a, b) =>
+      a[configuracion.campoOrden] - b[configuracion.campoOrden]
+    );
+  }
+
+  if (criterio === "valor-desc") {
+    return copia.sort((a, b) =>
+      b[configuracion.campoOrden] - a[configuracion.campoOrden]
+    );
+  }
+
+  return copia;
 }
 
 // TODO: aplica las tres funciones anteriores en cadena según el estado
 // ({ categoria, texto, orden }) y devuelve la lista resultante.
 function aplicarFiltros(lista, estadoActual) {
+  const filtrados = filtrarPorCategoria(lista, estadoActual.categoria);
 
+  const buscados = buscarPorTexto(filtrados, estadoActual.texto);
+
+  const ordenados = ordenarItems(buscados, estadoActual.orden);
+
+  return ordenados;
 }
 
 /* ---------------------------------------------------------------
@@ -119,7 +156,7 @@ function aplicarFiltros(lista, estadoActual) {
 // resultado en #catalogo con innerHTML y actualiza #contador
 // (por ejemplo "Mostrando 5 de 12 resultados").
 function actualizarVista() {
-  const lista = items;
+  const lista = aplicarFiltros(items, estado);
 
   const catalogo = document.getElementById("catalogo");
   const contador = document.getElementById("contador");
@@ -136,6 +173,36 @@ function actualizarVista() {
 //   change en #orden: actualiza estado.orden
 // Después de cada cambio llama a actualizarVista().
 function iniciar() {
+  const botones = document.querySelectorAll("[data-categoria]");
+  const buscador = document.getElementById("buscador");
+  const orden = document.getElementById("orden");
+
+  botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+      estado.categoria = boton.dataset.categoria;
+
+      botones.forEach(b => {
+        b.setAttribute("aria-pressed", "false");
+        b.classList.remove("active");
+      });
+
+      boton.setAttribute("aria-pressed", "true");
+      boton.classList.add("active");
+
+      actualizarVista();
+    });
+  });
+
+  buscador.addEventListener("input", () => {
+    estado.texto = buscador.value;
+    actualizarVista();
+  });
+
+  orden.addEventListener("change", () => {
+    estado.orden = orden.value;
+    actualizarVista();
+  });
+
   actualizarVista();
 }
 
